@@ -74,7 +74,11 @@ class App extends Component {
                       showClear={users.length > 0 ? true : false}
                       setAlert={this.setAlert}
                     />
-                    <Users loading={loading} users={users}></Users>
+                    <Users
+                      loading={loading}
+                      users={users}
+                      loading={loading}
+                    ></Users>
                   </Fragment>
                 )}
               />
@@ -83,12 +87,7 @@ class App extends Component {
                 exact
                 path='/user/:login'
                 render={(props) => (
-                  <User
-                    {...props}
-                    getUser={this.getUser}
-                    user={user}
-                    loading={loading}
-                  />
+                  <User {...props} getUser={this.getUser} user={user} />
                 )}
               />
             </Switch>

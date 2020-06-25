@@ -86,18 +86,19 @@ export class User extends Component {
               <li>
                 {blog && (
                   <Fragment>
-                    <strong>Website: </strong> {blog}
+                    <strong>Username: </strong> {blog}
+                  </Fragment>
+                )}
+              </li>
+              <li>
+                {login && (
+                  <Fragment>
+                    <strong>Username: </strong> {login}
                   </Fragment>
                 )}
               </li>
             </ul>
           </div>
-        </div>
-        <div className='card text-center'>
-          <div className='badge badge-primary'>Followers: {followers}</div>
-          <div className='badge badge-success'>Following: {followers}</div>
-          <div className='badge badge-light'>Public Repos: {public_repos}</div>
-          <div className='badge badge-dark'>Public Gist: {public_gists}</div>
         </div>
       </Fragment>
     );

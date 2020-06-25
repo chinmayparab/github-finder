@@ -17,7 +17,6 @@ export class User extends Component {
   render() {
     const {
       name,
-      company,
       avatar_url,
       location,
       bio,
@@ -65,39 +64,10 @@ export class User extends Component {
                 <p>{bio}</p>
               </Fragment>
             )}
-            <a href={html_url} className='btn btn-dark my-1'>
+            <a href={html_url} classname='bt btn-dark my-1'>
               Github Profile
             </a>
-            <ul>
-              <li>
-                {login && (
-                  <Fragment>
-                    <strong>Username: </strong> {login}
-                  </Fragment>
-                )}
-              </li>
-              <li>
-                {company && (
-                  <Fragment>
-                    <strong>Company: </strong> {company}
-                  </Fragment>
-                )}
-              </li>
-              <li>
-                {blog && (
-                  <Fragment>
-                    <strong>Website: </strong> {blog}
-                  </Fragment>
-                )}
-              </li>
-            </ul>
           </div>
-        </div>
-        <div className='card text-center'>
-          <div className='badge badge-primary'>Followers: {followers}</div>
-          <div className='badge badge-success'>Following: {followers}</div>
-          <div className='badge badge-light'>Public Repos: {public_repos}</div>
-          <div className='badge badge-dark'>Public Gist: {public_gists}</div>
         </div>
       </Fragment>
     );
