@@ -6,14 +6,12 @@ import { Link } from "react-router-dom";
 export class User extends Component {
   componentDidMount() {
     this.props.getUser(this.props.match.params.login);
-    this.props.getUserRepos(this.props.match.params.login);
   }
 
   static propTypes = {
     loading: PropTypes.bool,
     user: PropTypes.object.isRequired,
     getUser: PropTypes.func.isRequired,
-    getUserRepos: PropTypes.func.isRequired,
   };
 
   render() {
@@ -56,7 +54,6 @@ export class User extends Component {
               src={avatar_url}
               className='round-img'
               style={{ width: "150px" }}
-              alt='Avatar'
             />
             <h1>{name}</h1>
             <p>Location: {location}</p>
