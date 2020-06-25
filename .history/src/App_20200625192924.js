@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Alert from "./components/layout/Alert";
 import Users from "./components/users/Users";
-import User from "./components/users/User";
 import Search from "./components/users/Search";
 import About from "./components/pages/About";
 import axios from "axios";
@@ -12,7 +11,6 @@ import "./App.css";
 class App extends Component {
   state = {
     users: [],
-    user: {},
     loading: false,
     alert: null,
   };
@@ -42,7 +40,7 @@ class App extends Component {
     const res = await axios.get(
       `https://api.github.com/users/${username}?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
     );
-    this.setState({ user: res.data, loading: false });
+    this.setState({ users: res.data.items, loading: false });
   };
 
   // clear users
@@ -54,7 +52,7 @@ class App extends Component {
   };
 
   render() {
-    const { users, loading, alert, user } = this.state;
+    const { users, loading, alert } = this.state;
 
     return (
       <Router>
@@ -79,11 +77,6 @@ class App extends Component {
                 )}
               />
               <Route exact path='/about' component={About} />
-              <Route
-                exact
-                path='/user/:login'
-                render={(props) => <User {...props} getUser={user} />}
-              />
             </Switch>
           </div>
         </div>
