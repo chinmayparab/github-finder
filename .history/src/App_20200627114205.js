@@ -25,7 +25,7 @@ const App = () => {
   // }
 
   // Searchy
-  const searchUsers = async (text) => {
+  searchUsers = async (text) => {
     setLoading(true);
 
     const res = await axios.get(
@@ -36,7 +36,7 @@ const App = () => {
   };
 
   // Get specific users
-  const getUser = async (username) => {
+  getUser = async (username) => {
     setLoading(true);
 
     const res = await axios.get(
@@ -47,7 +47,7 @@ const App = () => {
   };
 
   // get user repositories
-  const getUserRepos = async (username) => {
+  getUserRepos = async (username) => {
     setLoading(true);
 
     const res = await axios.get(
@@ -58,12 +58,12 @@ const App = () => {
   };
 
   // clear users
-  const clearUsers = () => {
+  clearUsers = () => {
     setUsers([]);
     setLoading(false);
   };
 
-  const showAlert = (msg, type) => {
+  setAlert = (msg, type) => {
     setAlert({ msg, type });
     setTimeout(() => setAlert(null), 3000);
   };
@@ -84,7 +84,7 @@ const App = () => {
                     searchUsers={searchUsers}
                     clearUsers={clearUsers}
                     showClear={users.length > 0 ? true : false}
-                    setAlert={showAlert}
+                    setAlert={setAlert}
                   />
                   <Users loading={loading} users={users}></Users>
                 </Fragment>
