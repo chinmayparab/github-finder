@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { useState, Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Alert from "./components/layout/Alert";
@@ -13,6 +13,14 @@ import AlertState from "./context/alert/AlertState";
 import "./App.css";
 
 const App = () => {
+  // async componentDidMount() {
+  //   this.setState({ loading: true });
+  //   const res = await axios.get(
+  //     `https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
+  //   );
+  //   this.setState({ users: res.data, loading: false });
+  // }
+
   return (
     <GithubState>
       <AlertState>
@@ -20,14 +28,14 @@ const App = () => {
           <div className='App'>
             <Navbar title='Github Finder' icon='fab fa-github'></Navbar>
             <div className='container'>
-              <Alert />
+              <Alert alert={alert} />
               <Switch>
                 <Route
                   exact
                   path='/'
                   render={(props) => (
                     <Fragment>
-                      <Search />
+                      <Search setAlert={showAlert} />
                       <Users />
                     </Fragment>
                   )}

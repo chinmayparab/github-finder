@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import axios from "axios";
-import GithubContext from "./githubContext";
-import GithubReducer from "./githubReducer";
+import AlertContext from "./alertContext";
+import AlertReducer from "./alertReducer";
 import {
   SEARCH_USERS,
   SET_LOADING,
@@ -19,14 +19,6 @@ const GithubState = (props) => {
   };
 
   const [state, dispatch] = useReducer(GithubReducer, initialState);
-
-  // async componentDidMount() {
-  //   this.setState({ loading: true });
-  //   const res = await axios.get(
-  //     `https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
-  //   );
-  //   this.setState({ users: res.data, loading: false });
-  // }
 
   //   Search Users
   const searchUsers = async (text) => {

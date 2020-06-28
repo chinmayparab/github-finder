@@ -4,14 +4,13 @@ import AlertContext from "../../context/alert/alertContext";
 
 const Search = () => {
   const githubContext = useContext(GithubContext);
-  const alertContext = useContext(AlertContext);
 
   const [text, setText] = useState("");
 
   const onSubmit = (e) => {
     e.preventDefault();
     if (text === "") {
-      alertContext.setAlert("Please enter something", "red");
+      setAlert("Please enter something", "red");
     } else {
       githubContext.searchUsers(text);
       setText("");
