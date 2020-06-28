@@ -12,7 +12,6 @@ export default (state, action) => {
       return {
         ...state,
         users: action.payload,
-        loading: false,
       };
     case SET_LOADING:
       return {

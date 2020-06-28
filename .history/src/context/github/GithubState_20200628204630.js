@@ -51,9 +51,7 @@ const GithubState = (props) => {
         loading: state.loading,
         searchUsers,
       }}
-    >
-      {props.children}
-    </GithubContext.Provider>
+    ></GithubContext.Provider>
   );
 };
 

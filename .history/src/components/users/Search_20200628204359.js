@@ -12,7 +12,7 @@ const Search = ({ showClear, clearUsers, setAlert }) => {
     if (text === "") {
       setAlert("Please enter something", "red");
     } else {
-      githubContext.searchUsers(text);
+      searchUsers(text);
       setText("");
     }
   };

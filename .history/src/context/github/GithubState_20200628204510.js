@@ -29,7 +29,7 @@ const GithubState = (props) => {
     );
     dispatch({
       type: SEARCH_USERS,
-      payload: res.data.items,
+      payload: res.data,
     });
   };
 
@@ -51,9 +51,7 @@ const GithubState = (props) => {
         loading: state.loading,
         searchUsers,
       }}
-    >
-      {props.children}
-    </GithubContext.Provider>
+    ></GithubContext.Provider>
   );
 };
 
