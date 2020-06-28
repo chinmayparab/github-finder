@@ -13,6 +13,7 @@ import GithubState from "./context/github/GithubState";
 import "./App.css";
 
 const App = () => {
+  const [users, setUsers] = useState([]);
   const [user, setUser] = useState({});
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -50,7 +51,12 @@ const App = () => {
     setLoading(false);
   };
 
-  // Set ALert
+  // clear users
+  const clearUsers = () => {
+    setUsers([]);
+    setLoading(false);
+  };
+
   const showAlert = (msg, type) => {
     setAlert({ msg, type });
     setTimeout(() => setAlert(null), 3000);
