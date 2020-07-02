@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# A Github User Finder React App!
+
+## Check it out <a href="https://githubcommunity.netlify.app/">here.</a>
 
 ## Available Scripts
 
